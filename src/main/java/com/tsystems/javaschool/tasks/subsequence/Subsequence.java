@@ -2,7 +2,7 @@ package com.tsystems.javaschool.tasks.subsequence;
 
 import java.util.List;
 
-public class Subsequence {
+class Subsequence {
 
     /**
      * Checks if it is possible to get a sequence which is equal to the first
@@ -12,9 +12,20 @@ public class Subsequence {
      * @param y second sequence
      * @return <code>true</code> if possible, otherwise <code>false</code>
      */
-    @SuppressWarnings("rawtypes")
-    public boolean find(List x, List y) {
-        // TODO: Implement the logic here
+
+    boolean find(List x, List y) {
+        int index = 0;
+
+        if (x == null || y == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if (index == x.size()) return true;
+
+        for (Object i : y) {
+            if (index == x.size()) return true;
+            if (i.equals(x.get(index))) index++;
+        }
         return false;
     }
 }
